@@ -32,3 +32,4 @@ constregex
 .depend
 .build
 .*.sw*
+samples/*/bin
