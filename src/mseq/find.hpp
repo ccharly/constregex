@@ -5,20 +5,23 @@
 
 namespace mseq {
 
-    template <bool Tcond, typename Tthen, typename Telse>
-    struct if_else {
-        typedef Tthen type;
-    };
+    namespace find_st {
 
-    template <typename Tthen, typename Telse>
-    struct if_else<false, Tthen, Telse> {
-        typedef typename Telse::type type;
-    };
+        template <bool Tcond, typename Tthen, typename Telse>
+        struct if_else {
+            typedef Tthen type;
+        };
+
+        template <typename Tthen, typename Telse>
+        struct if_else<false, Tthen, Telse> {
+            typedef typename Telse::type type;
+        };
+    }
 
     template <typename Tseq, template <typename> class Tfunctor>
     struct find {
         typedef
-            typename if_else<Tfunctor<typename Tseq::hd>::value,
+            typename find_st::if_else<Tfunctor<typename Tseq::hd>::value,
                 /* then */ typename Tseq::hd,
                 /* else */ find<typename Tseq::tl, Tfunctor>
             >::type type;
