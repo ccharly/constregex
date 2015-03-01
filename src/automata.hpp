@@ -21,10 +21,10 @@ struct Automata {
     };
 
     template <size_t Tnew_start>
-    struct start_state {
+    struct set_start_state {
         private:
             typedef
-                Automata<states, Tnew_start>
+                Automata<states, Tnew_start, edges>
                 NewAutomata;
 
             template <typename T>

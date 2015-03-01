@@ -9,7 +9,7 @@ typedef
     ::create_state<0>::type
     ::create_state<1, true>::type
 
-    ::start_state<0>::type
+    ::set_start_state<0>::type
 
     ::create_edge<0, 1, 'a'>::type
     ::create_edge<1, 1, 'a'>::type
