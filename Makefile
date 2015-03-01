@@ -28,7 +28,8 @@ BUILD_DIR=.build
 BIN_NAME=$(shell basename `git rev-parse --show-toplevel`)
 
 # Top level rule
-#$(BIN_NAME): .depend $(LIB_DIR)/$(LIB_PREFIX)$(BIN_NAME).a $(LIB_DIR)/$(LIB_PREFIX)$(BIN_NAME).so
+all: $(BIN_NAME)
+
 $(BIN_NAME): .depend $(OBJS)
 	$(CXX) -o $@ $(OBJS)
 
