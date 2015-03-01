@@ -2,6 +2,7 @@
 #include "mseq.hpp"
 #include "state.hpp"
 #include "automata.hpp"
+#include "mstring.hpp"
 
 typedef
     Automata<>
@@ -32,9 +33,16 @@ int main() {
     //    std::cout << "matched" << std::endl;
     //}
 
-    print_type<automata>();
-    print_type<automata::get_edges_for<1>::type>();
+    //print_type<automata>();
+    //print_type<automata::get_edges_for<1>::type>();
     //print_type<state1>();
+
+    //print_type<automata::get_next_state<'b'>::type>();
+
+    //automata::match<salut, 0>::value;
+    if (automata::match<mstring("aaaaaa,a")>::value) {
+        std::cout << "matched" << std::endl;
+    }
 
     return 0;
 }
