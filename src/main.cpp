@@ -3,12 +3,23 @@
 #include "state.hpp"
 #include "automata.hpp"
 
-typedef Automata<mseq::empty>
-    ::push_state<State<0>>::type
-    ::push_state<State<1>>::type
-    ::push_state<State<2, true>>::type
-    ::start_state<2>::type
+typedef
+    Automata<>
+
+    ::create_state<0>::type
+    ::create_state<1, true>::type
+
+    ::start_state<0>::type
+
+    ::create_edge<0, 1, 'a'>::type
+    ::create_edge<1, 1, 'a'>::type
+    ::create_edge<1, 0, ','>::type
+
     automata;
+
+typedef
+    automata::get_state<1>::type
+    state1;
 
 template <typename T>
 void print_type() {
@@ -16,6 +27,14 @@ void print_type() {
 }
 
 int main() {
+
+    //if (automata::match("aa,a")::value) {
+    //    std::cout << "matched" << std::endl;
+    //}
+
     print_type<automata>();
+    print_type<automata::get_edges_for<1>::type>();
+    //print_type<state1>();
+
     return 0;
 }
