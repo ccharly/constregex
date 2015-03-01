@@ -7,6 +7,7 @@
 #include "mseq/push.hpp"
 #include "mseq/some.hpp"
 #include "mseq/every.hpp"
+#include "mseq/filter.hpp"
 #include "mseq/debug.hpp"
 
 #endif
