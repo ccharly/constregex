@@ -1,10 +1,13 @@
 #ifndef EDGE_HPP__
 #define EDGE_HPP__
 
-template <size_t Tlhs, size_t Trhs, char Tc>
+constexpr char LAMBDA = (char)0xFF;
+
+template <size_t Tlhs, size_t Trhs, char Tc = LAMBDA>
 struct Edge {
 
     enum {
+        is_lambda = Tc == LAMBDA,
         lhs = Tlhs,
         rhs = Trhs,
         c = Tc

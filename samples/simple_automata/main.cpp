@@ -16,6 +16,7 @@ typedef
     ::create_edge<0, 1, 'a'>::type
     ::create_edge<1, 1, 'a'>::type
     ::create_edge<1, 0, ','>::type
+    ::create_edge<1, 0, LAMBDA>::type
 
     automata;
 
