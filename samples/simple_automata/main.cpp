@@ -41,9 +41,8 @@ int main() {
     std::cout << "Try to match the following input: " << THE_INPUT << std::endl;
     if (automata::match<mstring(THE_INPUT)>::value) {
         std::cout << "match" << std::endl;
-        return 0;
     } else {
         std::cout << "does not match" << std::endl;
-        return 1;
     }
+    return 0;
 }
