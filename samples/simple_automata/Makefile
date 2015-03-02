@@ -33,6 +33,12 @@ BIN_NAME=bin
 # Top level rule
 all: clean $(BIN_NAME)
 
+run: all
+	@echo "\n"
+	@echo "## ----------------"
+	@./$(BIN_NAME)
+	@echo "## ----------------"
+
 $(BIN_NAME): .depend $(OBJS)
 	$(CXX) -o $@ $(OBJS)
 
